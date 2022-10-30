@@ -1,0 +1,9 @@
+.img {
+    width: 100%;
+    height: 100%;
+}
+
+.section {
+    min-height: 450px;
+    background-color: rgb(231, 223, 221);
+}

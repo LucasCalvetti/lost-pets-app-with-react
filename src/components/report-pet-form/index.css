@@ -1,0 +1,25 @@
+.formContainer {
+    background-color: rgb(233 128 128);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 0 auto;
+    padding-top: 25px;
+    max-width: 80vw;
+    align-items: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.popUpContainer {
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}

@@ -1,0 +1,53 @@
+.container {
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+    flex-direction: column;
+}
+
+.map-container {
+    width: 400px;
+    height: 400px;
+    position: relative;
+}
+
+.map {
+    width: 400px;
+    height: 400px;
+}
+
+.mapboxgl-ctrl .mapboxgl-ctrl-attrib .mapboxgl-compact {
+    display: none;
+}
+
+.sidebar {
+    z-index: 1;
+    margin: 12px;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 4px;
+    position: absolute;
+    font-family: monospace;
+    background-color: rgba(8, 16, 24, 0.9);
+}
+
+.p {
+    max-width: 335px;
+    max-height: 77px;
+}
+
+.div-button {
+    width: 400px;
+    height: 60px;
+    border: black;
+    display: flex;
+    cursor: pointer;
+    margin-top: 15px;
+    border-radius: 5px;
+    text-align: center;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    justify-content: center;
+    background-color: #7b8dd2;
+}

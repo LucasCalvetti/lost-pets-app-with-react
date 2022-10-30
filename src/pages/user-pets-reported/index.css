@@ -1,0 +1,21 @@
+.pageContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.petsContainer {
+    margin: 30px 0 0 0;
+    padding: 0;
+    list-style: none;
+    list-style-type: none;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+}
+@media (max-width: 990px) {
+    .petsContainer {
+        grid-template-columns: 1fr;
+    }
+}
