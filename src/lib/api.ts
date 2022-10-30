@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3004"; //env posteriormente
+const API_URL = "https://pet-finder-app-apx.herokuapp.com";
 
 //---------------------------------------------------------------------------------------//
 
