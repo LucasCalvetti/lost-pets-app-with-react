@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import { Home } from "pages/Home";
-import { SearchPetsAround } from "pages/search-pets-around";
-import { Profile } from "pages/Profile";
-import { LoginValidation } from "pages/login-validation";
-import { UserReportedPets } from "pages/user-pets-reported";
+import { Home } from "../pages/Home";
+import { SearchPetsAround } from "../pages/search-pets-around";
+import { Profile } from "../pages/Profile";
+import { LoginValidation } from "../pages/login-validation";
+import { UserReportedPets } from "../pages/user-pets-reported";
 import { Layout } from "components/Layout";
-import { Registration } from "pages/registration";
-import { ReportNewPet } from "pages/report-new-pet";
-import { EditPet } from "pages/edit-pet";
+import { Registration } from "../pages/registration";
+import { ReportNewPet } from "../pages/report-new-pet";
+import { EditPet } from "../pages/edit-pet";
 
 export function AppRoutes() {
     return (
