@@ -13,5 +13,7 @@ jobs:
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_APX_DWF_M8_LOST_PETS_LUCAS }}'
-          projectId: apx-dwf-m8-lost-pets-lucas
+          firebaseServiceAccount: >-
+            ${{ secrets.FIREBASE_SERVICE_ACCOUNT_LUCAS_CALVETTI_LOST_PETS_REACT
+            }}
+          projectId: lucas-calvetti-lost-pets-react
