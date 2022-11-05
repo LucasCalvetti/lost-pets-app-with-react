@@ -19,3 +19,7 @@
         grid-template-columns: 1fr;
     }
 }
+
+.titleContainer {
+    padding: 40px 0 40px 0;
+}

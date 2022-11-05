@@ -50,7 +50,6 @@ export async function useUpdateProfileData(token: string, data: { fullName: stri
 
 export async function useGetUserProfileInfo(token: string) {
     const response = await getMyUserProfile(token);
-    console.log(response);
     return response;
 }
 

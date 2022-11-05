@@ -1,5 +1,4 @@
 const API_URL = "https://pet-finder-app-apx.herokuapp.com";
-
 //---------------------------------------------------------------------------------------//
 
 type login = {

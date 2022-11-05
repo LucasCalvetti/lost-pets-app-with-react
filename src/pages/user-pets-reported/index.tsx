@@ -4,6 +4,7 @@ import { useGetUserReportedPets, useUserDataAtom } from "hooks";
 import { PetCard } from "components/pet-card";
 import { userData } from "hooks";
 import { useNavigate } from "react-router-dom";
+import { MainTitleText } from "ui/texts";
 
 export function UserReportedPets() {
     const navigate = useNavigate();
@@ -21,12 +22,16 @@ export function UserReportedPets() {
         const result = await useGetUserReportedPets(token);
         setPetResults(result);
     }
+
     useEffect(() => {
         getPetsReported();
     }, []);
 
     return (
         <div className={css.pageContainer}>
+            <div className={css.titleContainer}>
+                <MainTitleText>Mascotas reportadas: {petResults.length}</MainTitleText>
+            </div>
             <div className={css.petsContainer}>
                 {petResults.map((pet) => {
                     return (

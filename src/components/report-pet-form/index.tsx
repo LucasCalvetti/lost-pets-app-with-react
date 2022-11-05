@@ -63,7 +63,7 @@ export function ReportPetForm(props: props) {
 
     return showPopUp ? (
         <div className={css.popUpContainer}>
-            <ParagraphText>Datos de {props.pet.petName} editados correctamente.</ParagraphText>
+            <ParagraphText>Datos de mascota publicados. ¡Muchas gracias!</ParagraphText>
             <MainButton
                 onClick={() => {
                     navigate("/user/pets");
