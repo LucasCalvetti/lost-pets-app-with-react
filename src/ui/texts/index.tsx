@@ -37,3 +37,7 @@ export function MainSubtitleText({ children }) {
 export function ParagraphText({ children }) {
     return <p className={css.paragraphText}>{children}</p>;
 }
+
+export function FooterText({ children }) {
+    return <h4 className={css.footerText}>{children}</h4>;
+}

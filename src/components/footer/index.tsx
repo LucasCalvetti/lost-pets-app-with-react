@@ -1,14 +1,17 @@
 import React from "react";
 import css from "./index.css";
 import logo from "assets/paw.png";
-import { MainSubtitleText } from "ui/texts";
+import { FooterText } from "ui/texts";
 
 export function Footer() {
     return (
         <div className={css.footerContainer}>
-            <MainSubtitleText>MascotasPerdidasAPP© 2022</MainSubtitleText>
+            <FooterText>MascotasPerdidasAPP© 2022</FooterText>
             <img src={logo} alt="huella" />
-            <MainSubtitleText>App desarrollada por: Lucas M. Calvetti</MainSubtitleText>
+            <div>
+                <FooterText>App desarrollada por: </FooterText>
+                <FooterText>Lucas M. Calvetti</FooterText>
+            </div>
         </div>
     );
 }

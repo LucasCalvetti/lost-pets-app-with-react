@@ -1,4 +1,5 @@
-const API_URL = "https://pet-finder-app-apx.herokuapp.com";
+//const API_URL = "https://pet-finder-app-apx.herokuapp.com";
+const API_URL = "http://localhost:3004";
 //---------------------------------------------------------------------------------------//
 
 type login = {
@@ -234,19 +235,36 @@ type updatedProfileResponse = {
     userWhoWasUpdated: number;
 };
 
-export async function updateProfileData(token: string, dataToUpdate: { fullName: string; email: string; password: string }) {
-    const response: updatedProfileResponse = await (
-        await fetch(API_URL + `/user/profile`, {
-            method: "PATCH",
-            headers: {
-                Authorization: `bearer ${token}`,
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(dataToUpdate),
-        })
-    ).json();
+export async function updateProfileData(token: string, dataToUpdate: { fullName: string; email: string; password?: string }) {
+    if (dataToUpdate.password == undefined) {
+        delete dataToUpdate["password"];
 
-    return response;
+        const response: updatedProfileResponse = await (
+            await fetch(API_URL + `/user/profile`, {
+                method: "PATCH",
+                headers: {
+                    Authorization: `bearer ${token}`,
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(dataToUpdate),
+            })
+        ).json();
+
+        return response;
+    } else {
+        const response: updatedProfileResponse = await (
+            await fetch(API_URL + `/user/profile`, {
+                method: "PATCH",
+                headers: {
+                    Authorization: `bearer ${token}`,
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(dataToUpdate),
+            })
+        ).json();
+
+        return response;
+    }
 }
 
 //---------------------------------------------------------------------------------------//

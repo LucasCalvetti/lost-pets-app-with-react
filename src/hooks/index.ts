@@ -43,7 +43,7 @@ export async function useCreateUser(data: { fullName; email; password }) {
     const response = await createUser(data);
     return response;
 }
-export async function useUpdateProfileData(token: string, data: { fullName: string; email: string; password: string }) {
+export async function useUpdateProfileData(token: string, data: { fullName: string; email: string; password?: string }) {
     const response = await updateProfileData(token, data);
     return response;
 }

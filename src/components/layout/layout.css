@@ -4,6 +4,7 @@
 }
 
 .section {
-    min-height: 450px;
+    min-height: 80vh;
     background-color: rgb(231, 223, 221);
+    padding-bottom: 30px;
 }
