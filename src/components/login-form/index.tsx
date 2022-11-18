@@ -43,3 +43,5 @@ export function LoginValidationForm() {
         </form>
     );
 }
+
+// tenes que resolver la parte estetica de reportPetForm (creo), y hacer el deploy de nuevo en heroku (porque modificaste algo del proyecto modulo 7), cuando termines todo capaz tengas tmb que hacer el nuevo build en github

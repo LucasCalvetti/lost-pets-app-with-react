@@ -19,6 +19,7 @@ export function DropzoneComp() {
         color: "#bdbdbd",
         outline: "none",
         transition: "border .24s ease-in-out",
+        width: "60vw",
     };
 
     const focusedStyle = {
