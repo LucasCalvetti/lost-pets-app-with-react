@@ -30,7 +30,6 @@ export function Mapping(props?: props) {
             center: lngLat,
             zoom: zoom,
         });
-        console.log(lngLat);
     }, [mapContainer]);
 
     useEffect(() => {

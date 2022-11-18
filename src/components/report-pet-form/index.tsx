@@ -45,7 +45,6 @@ export function ReportPetForm(props: props) {
     useEffect(() => {
         if (apiResponse.newPet || apiResponse.updatedPet) {
             setPetToReport({ id: null, petName: null, lat: null, lng: null, petImg: null, location: null, found: false, description: null, userId: null, token: null, edit: false });
-            console.log(apiResponse);
             setShowPopUp(true);
             setEditFlag(false);
         }

@@ -106,8 +106,6 @@ const petFoundById = selector({
     get: async ({ get }) => {
         const atomValues = get(petIdParamAtom);
         if (atomValues.petId != null && atomValues.token != null) {
-            console.log(atomValues);
-
             const response = await getPetById(atomValues.token, parseInt(atomValues.petId));
             return response;
         } else {

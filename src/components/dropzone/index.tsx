@@ -45,7 +45,6 @@ export function DropzoneComp() {
         });
     }
     const onDropAccepted = useCallback(async (acceptedFiles: File[]) => {
-        console.log(acceptedFiles[0].type);
         const newBase64Img = await getBase64Img(acceptedFiles[0]);
         setPetImgToRecoilAtom((lastState) => {
             return { ...lastState, petImg: newBase64Img };
@@ -57,7 +56,6 @@ export function DropzoneComp() {
         } else if (rejectedFiles[0].file.size > imgMaxSize) {
             alert("La imagen que intentas subir pesa más de 60kb, por favor utiliza una más pequeña o modificala en un editor");
         } else if (rejectedFiles[0].file.type.split("/")[0] != "image") {
-            console.log("el tipo de archivo rechazado es: ", rejectedFiles[0].file.type);
             alert("El archivo que intentas subir no es del tipo imagen, intenta con archivos de imagen con extensión .png, .jpg o .jpeg");
         }
     }, []);
