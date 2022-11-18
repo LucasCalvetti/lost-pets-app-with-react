@@ -79,11 +79,11 @@ export function DropzoneComp() {
         [isFocused, isDragAccept, isDragReject]
     );
     return (
-        <div className={css.imgContainer} {...getRootProps({ style })}>
+        <div className={css.img} {...getRootProps({ style })}>
             <input {...getInputProps()} />
             {petImg ? (
                 <div>
-                    <img className={css.imgContainer} src={petImg} />
+                    <img className={css.img} src={petImg} />
                 </div>
             ) : (
                 <p>Arrastre la imagen de su mascota aquí ó haga click y seleccionela. (máximo: {imgMaxSize / 1000}kb)</p>
