@@ -1,4 +1,4 @@
-const API_URL = "https://lost-pets-app-with-react-9zfk.vercel.app";
+const API_URL = "https://lost-pets-app-9zfk.vercel.app";
 
 //---------------------------------------------------------------------------------------//
 
