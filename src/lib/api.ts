@@ -1,4 +1,4 @@
-const API_URL = "https://pet-finder-app-apx.herokuapp.com";
+const API_URL = "lost-pets-app-with-react-9zfk.vercel.app";
 
 //---------------------------------------------------------------------------------------//
 
