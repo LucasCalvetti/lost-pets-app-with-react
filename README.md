@@ -1,6 +1,6 @@
 Web app:
 
-https://lucas-calvetti-lost-pets-react.firebaseapp.com/
+https://lucas-calvetti-lost-pets-react.web.app/
 
 
 API documentation in Postman (same as in non-react version): 
