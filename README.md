@@ -1,6 +1,6 @@
-SPANISH:
+#SPANISH DESCRIPTION:
 
-# Web app
+## Web app
 
 🌐 Puedes acceder a la aplicación web [aquí](https://lucas-calvetti-lost-pets-react.web.app/).
 
@@ -34,9 +34,9 @@ Este aplicación fue creada utilizando las siguientes tecnologías/conocimientos
 
 ---------------------------------------------------------------------------------------------------------------------------
 
-ENGLISH:
+# ENGLISH DESCRIPTION:
 
-# Web app
+## Web app
 
 🌐 You can access the web application [here](https://lucas-calvetti-lost-pets-react.web.app/).
 
