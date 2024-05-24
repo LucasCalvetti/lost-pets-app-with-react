@@ -1,32 +1,32 @@
 .NavMenuText {
-    margin: 0;
-    color: white;
-    font-family: Fresca;
-    font-size: 22px;
-    cursor: pointer;
+  margin: 0;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-size: 22px;
+  cursor: pointer;
 }
 
 .MainTitleText {
-    margin: 0;
-    font-family: Fresca;
-    font-weight: bold;
-    font-size: 32px;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  font-size: 32px;
 }
 
 .MainSubitleText {
-    margin: 0;
-    font-family: Fresca;
-    font-size: 24px;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 24px;
 }
 
 .paragraphText {
-    font-family: Fresca;
-    font-size: 16px;
-    margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  margin: 0;
 }
 
 .footerText {
-    font-family: Fresca;
-    font-size: 16px;
-    margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  margin: 0;
 }

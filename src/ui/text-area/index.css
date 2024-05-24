@@ -1,7 +1,32 @@
-.root{
-    border-radius: 4px;
-    font-size: 18px;
-    padding: 5px 10px;
-    text-align: center;
-    border: solid 2px;
+.root {
+  border-radius: 10px;
+  font-size: large;
+  text-align: left;
+  border: transparent;
+  padding: 10px;
+  height: 180px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  resize: none;
+  font-family: "Montserrat", sans-serif;
+}
+.root::-webkit-scrollbar {
+  width: 8px;
+}
+
+.root::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.root::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.root::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.root:focus-visible {
+  outline: none;
 }

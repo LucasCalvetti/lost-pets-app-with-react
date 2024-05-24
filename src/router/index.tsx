@@ -11,18 +11,18 @@ import { ReportNewPet } from "../pages/report-new-pet/index";
 import { EditPet } from "../pages/edit-pet/index";
 
 export function AppRoutes() {
-    return (
-        <Routes>
-            <Route path="/" element={<Layout />}>
-                <Route index element={<Home />} />
-                <Route path="/login" element={<LoginValidation />} />
-                <Route path="pets/search/:geoloc" element={<SearchPetsAround />} />
-                <Route path="/registration" element={<Registration />} />
-                <Route path="/user/profile" element={<Profile />} />
-                <Route path="/user/pets" element={<UserReportedPets />} />
-                <Route path="/user/create/pet" element={<ReportNewPet />} />
-                <Route path="/user/edit/:petId" element={<EditPet />} />
-            </Route>
-        </Routes>
-    );
+  return (
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="/login" element={<LoginValidation />} />
+        <Route path="pets/search/:geoloc" element={<SearchPetsAround />} />
+        <Route path="/registration" element={<Registration />} />
+        <Route path="/user/profile" element={<Profile />} />
+        <Route path="/user/pets" element={<UserReportedPets />} />
+        <Route path="/user/create/pet" element={<ReportNewPet />} />
+        <Route path="/user/edit/:petId" element={<EditPet />} />
+      </Route>
+    </Routes>
+  );
 }

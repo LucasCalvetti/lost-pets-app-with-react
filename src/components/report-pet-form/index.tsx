@@ -11,99 +11,104 @@ import { pet } from "lib/api";
 import css from "./index.css";
 
 type props = {
-    formTitle: string;
-    pet?: pet;
-    editFlag?: boolean;
+  formTitle: string;
+  pet?: pet;
+  editFlag?: boolean;
 };
 
 export function ReportPetForm(props: props) {
-    const navigate = useNavigate();
-    const { userId, token } = userData();
-    const apiResponse: any = usePostNewReportedPetValue();
-    const [petToReport, setPetToReport] = useLastPetToCreate();
-    const [editFlag, setEditFlag] = useState(props.editFlag || false);
-    useEffect(() => {
-        if (props.pet) {
-            const { id, petName, lat, lng, description, petImg, location, userId } = props.pet;
-            setPetToReport((lastState) => {
-                return { ...lastState, id, petName, lat, lng, description, petImg, location, userId, edit: true };
-            });
-        }
-    }, [props.pet]);
-    const [showPopUp, setShowPopUp] = useState(false);
-    function handleSubmit(e) {
-        e.preventDefault();
-        const petName = e.target.name.value;
-        const description = e.target.description.value;
-        const location = e.target.location.value;
-
-        setPetToReport((lastState) => {
-            return { ...lastState, userId, token, petName, location, description };
-        });
+  const navigate = useNavigate();
+  const { userId, token } = userData();
+  const apiResponse: any = usePostNewReportedPetValue();
+  const [petToReport, setPetToReport] = useLastPetToCreate();
+  const [editFlag, setEditFlag] = useState(props.editFlag || false);
+  useEffect(() => {
+    if (props.pet) {
+      const { id, petName, lat, lng, description, petImg, location, userId } = props.pet;
+      setPetToReport((lastState) => {
+        return { ...lastState, id, petName, lat, lng, description, petImg, location, userId, edit: true };
+      });
     }
+  }, [props.pet]);
+  const [showPopUp, setShowPopUp] = useState(false);
+  function handleSubmit(e) {
+    e.preventDefault();
+    const petName = e.target.name.value;
+    const description = e.target.description.value;
+    const location = e.target.location.value;
 
-    useEffect(() => {
-        if (apiResponse.newPet || apiResponse.updatedPet) {
-            setPetToReport({ id: null, petName: null, lat: null, lng: null, petImg: null, location: null, found: false, description: null, userId: null, token: null, edit: false });
-            setShowPopUp(true);
-            setEditFlag(false);
-        }
-    }, [apiResponse]);
+    setPetToReport((lastState) => {
+      return { ...lastState, userId, token, petName, location, description };
+    });
+  }
 
-    async function handleClick() {
-        if (confirm("Estas seguro/a que querés reportarla como encontrada? si es asi, los datos de tu mascotas serán borrados de la base de datos.")) {
-            const response = await useDeletePet(token, props.pet.id);
-            if (response.deletedPet) {
-                alert(`${props.pet.petName} ha sido eliminada de la base de datos.`);
-                navigate("/user/pets");
+  useEffect(() => {
+    if (apiResponse.newPet || apiResponse.updatedPet) {
+      setPetToReport({ id: null, petName: null, lat: null, lng: null, petImg: null, location: null, found: false, description: null, userId: null, token: null, edit: false });
+      setShowPopUp(true);
+      setEditFlag(false);
+    }
+  }, [apiResponse]);
+
+  async function handleClick() {
+    if (confirm("Estas seguro/a que querés reportarla como encontrada? si es asi, los datos de tu mascotas serán borrados de la base de datos.")) {
+      const response = await useDeletePet(token, props.pet.id);
+      if (response.deletedPet) {
+        alert(`${props.pet.petName} ha sido eliminada de la base de datos.`);
+        navigate("/user/pets");
+      }
+    }
+  }
+
+  return showPopUp ? (
+    <div className={css.popUpContainer}>
+      <ParagraphText>
+        Datos de mascota publicados.
+        <br /> <br /> ¡Muchas gracias!
+      </ParagraphText>
+      <div className={css.navigateButtonContainer}>
+        <MainButton
+          onClick={() => {
+            navigate("/user/pets");
+            setShowPopUp(false);
+          }}
+        >
+          Ir a tus mascotas reportadas
+        </MainButton>
+      </div>
+    </div>
+  ) : (
+    <div className={css.formContainer}>
+      <form className={css.form} onSubmit={handleSubmit}>
+        <MainTitleText>{props.formTitle}</MainTitleText>
+        <div>
+          <ParagraphText>Nombre:</ParagraphText>
+          <TextField maxLength={40} name="name" type="text">
+            {petToReport.petName ? petToReport.petName : null}
+          </TextField>
+        </div>
+        <div>
+          <ParagraphText>Imagen de tu mascota perdida:</ParagraphText>
+          <DropzoneComp />
+          <ParagraphText>
+            La imagen no puede superar los 60kb, si necesitas achicarla,
+            {
+              <a href="https://www.achicarimagenes.com.ar/" target="_blank">
+                {" haz click aquí"}
+              </a>
             }
-        }
-    }
-
-    return showPopUp ? (
-        <div className={css.popUpContainer}>
-            <ParagraphText>Datos de mascota publicados. ¡Muchas gracias!</ParagraphText>
-            <MainButton
-                onClick={() => {
-                    navigate("/user/pets");
-                    setShowPopUp(false);
-                }}
-            >
-                Ir a tus mascotas reportadas
-            </MainButton>
+          </ParagraphText>
         </div>
-    ) : (
-        <div className={css.formContainer}>
-            <form className={css.form} onSubmit={handleSubmit}>
-                <MainTitleText>{props.formTitle}</MainTitleText>
-                <div>
-                    <ParagraphText>Nombre:</ParagraphText>
-                    <TextField maxLength={40} name="name" type="text">
-                        {petToReport.petName ? petToReport.petName : null}
-                    </TextField>
-                </div>
-                <div>
-                    <ParagraphText>Imagen de tu mascota perdida:</ParagraphText>
-                    <DropzoneComp />
-                    <ParagraphText>
-                        La imagen no puede superar los 60kb, si necesitas achicarla,
-                        {
-                            <a href="https://www.achicarimagenes.com.ar/" target="_blank">
-                                {" haz click aquí"}
-                            </a>
-                        }
-                    </ParagraphText>
-                </div>
-                <Mapping lat={petToReport.lat ? petToReport.lat : null} lng={petToReport.lng ? petToReport.lng : null} location={petToReport.location ? petToReport.location : null} />
-                <div>
-                    <ParagraphText>Describelo/a:</ParagraphText>
-                    <TextArea maxLength={255} name="description" placeHolder="¿Cómo es? ¿Algún razgo distintivo? ¿Cuándo se perdió? etc...">
-                        {petToReport.description ? petToReport.description : ""}
-                    </TextArea>
-                </div>
-                {petToReport.id ? <MainButton>Aplicar cambios</MainButton> : <MainButton>Reportar Mascota</MainButton>}
-            </form>
-            {editFlag ? <MainButton onClick={handleClick}>Reportar como encontrada</MainButton> : null}
+        <Mapping lat={petToReport.lat ? petToReport.lat : null} lng={petToReport.lng ? petToReport.lng : null} location={petToReport.location ? petToReport.location : null} />
+        <div>
+          <ParagraphText>Describelo/a:</ParagraphText>
+          <TextArea maxLength={255} name="description" placeholder="¿Cómo es? ¿Algún razgo distintivo? ¿Cuándo se perdió? etc...">
+            {petToReport.description ? petToReport.description : ""}
+          </TextArea>
         </div>
-    );
+        {petToReport.id ? <MainButton>Aplicar cambios</MainButton> : <MainButton>Reportar Mascota</MainButton>}
+      </form>
+      {editFlag ? <MainButton onClick={handleClick}>Reportar como encontrada</MainButton> : null}
+    </div>
+  );
 }

@@ -1,21 +1,67 @@
 .mainButton {
-    border-radius: 4px;
-    background-color: rgb(128, 201, 167);
-    padding: 5px 10px;
-    text-align: center;
-    border: solid 2px;
+  background-color: rgba(104, 24, 62, 0.6);
+  color: rgb(255, 255, 255);
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
+  border: none;
+  border-radius: 22px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.6);
+  width: 100%;
 }
+.mainButton:hover {
+  background-color: rgba(104, 24, 62, 0.8);
+}
+
 .sendButton {
-    border-radius: 4px;
-    background-color: rgb(171, 185, 248);
-    padding: 5px 10px;
-    text-align: center;
-    border: solid 2px;
+  background-color: rgba(104, 24, 62, 0.6);
+  color: rgb(255, 255, 255);
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
+  border: none;
+  border-radius: 22px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.6);
+  width: 100%;
 }
+
+.sendButton:hover {
+  background-color: rgba(104, 24, 62, 0.8);
+}
+
 .exitButton {
-    border-radius: 4px;
-    background-color: rgb(252, 25, 25);
-    padding: 5px 10px;
-    text-align: center;
-    border: solid 2px;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+}
+
+.exitButton::before,
+.exitButton::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 20px;
+  background-color: #333;
+  transform-origin: 50% 50%;
+}
+
+.exitButton::before {
+  transform: rotate(45deg);
+}
+
+.exitButton::after {
+  transform: rotate(-45deg);
+}
+
+.exitButton:hover::before,
+.exitButton:hover::after {
+  background-color: #555;
 }

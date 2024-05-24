@@ -1,10 +1,10 @@
 .menuLinkList {
-    display: contents;
-    justify-content: space-evenly;
-    width: 100%;
-    list-style-type: none;
+  display: contents;
+  justify-content: space-evenly;
+  width: 100%;
+  list-style-type: none;
 }
 .li :focus {
-    color: black;
-    text-decoration-line: none;
+  color: black;
+  text-decoration-line: none;
 }

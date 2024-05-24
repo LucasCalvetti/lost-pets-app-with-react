@@ -1,7 +1,18 @@
-.root{
-    border-radius: 4px;
-    font-size: 18px;
-    padding: 5px 10px;
-    text-align: center;
-    border: solid 2px;
+.root {
+  border: none;
+  outline: none;
+  display: inline-block;
+  height: 34px;
+  vertical-align: middle;
+  position: relative;
+  bottom: 14px;
+  right: 9px;
+  border-radius: 22px;
+  margin-top: 7px;
+  box-sizing: border-box;
+  padding: 0 18px;
+  font-size: 15px;
+}
+.root::placeholder {
+  color: #868383;
 }

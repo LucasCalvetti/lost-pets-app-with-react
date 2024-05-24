@@ -8,9 +8,9 @@ const container = document.getElementById("hello-example");
 const root = createRoot(container!);
 
 root.render(
-    <RecoilRoot>
-        <BrowserRouter>
-            <AppRoutes />
-        </BrowserRouter>
-    </RecoilRoot>
+  <RecoilRoot>
+    <BrowserRouter>
+      <AppRoutes />
+    </BrowserRouter>
+  </RecoilRoot>
 );

@@ -1,9 +1,8 @@
 .headerComponent {
-    background: rgb(218, 197, 95);
-    background: linear-gradient(90deg, rgba(218, 197, 95, 0.99) 0%, rgba(64, 167, 146, 0.8940097157026873) 51%, rgba(24, 104, 134, 0.8828052339099702) 100%);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    height: 80px;
+  background-color: rgb(104, 24, 62);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  height: 80px;
 }

@@ -1,6 +1,20 @@
 .form {
-    padding-top: 30px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+.passwordContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.notice {
+  font-size: small;
+}
+
+.nameContainer {
+  display: flex;
+  flex-direction: column;
 }
