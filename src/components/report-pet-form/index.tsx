@@ -109,7 +109,7 @@ export function ReportPetForm(props: props) {
         </div>
         <div className={css.buttonContainer}>{petToReport.id ? <MainButton>Aplicar cambios</MainButton> : <MainButton>Reportar Mascota</MainButton>}</div>
       </form>
-      {editFlag ? <MainButton onClick={handleClick}>Reportar como encontrada</MainButton> : null}
+      <div className={css.buttonContainer}>{editFlag ? <MainButton onClick={handleClick}>Reportar como encontrada</MainButton> : null}</div>
     </div>
   );
 }

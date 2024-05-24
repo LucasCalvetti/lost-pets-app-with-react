@@ -20,8 +20,8 @@ export function DropzoneComp() {
     color: "#bdbdbd",
     outline: "none",
     transition: "border .24s ease-in-out",
-    width: "30vw",
-    height: "30vw",
+    "min-width": "30vw",
+    "min-height": "30vw",
   };
 
   const focusedStyle = {

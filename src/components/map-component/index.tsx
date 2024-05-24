@@ -59,6 +59,9 @@ export function Mapping(props?: props) {
     const lngLatFromApiMapbox = await searchLocation();
     setLngLat(lngLatFromApiMapbox);
     marker.current.setLngLat(lngLatFromApiMapbox);
+
+    // Actualizar lastPetToCreate con las nuevas coordenadas
+    setPet((previusPetData) => ({ ...previusPetData, lat: lngLatFromApiMapbox.lat, lng: lngLatFromApiMapbox.lng }));
   }
 
   return (
