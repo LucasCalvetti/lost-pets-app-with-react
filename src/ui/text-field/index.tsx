@@ -13,7 +13,7 @@ type TextFieldType = {
 
 export function TextField({ name, placeholder, type, children, maxLength, onChange, value }: TextFieldType) {
   let newType = type;
-  let pattern = "";
+  let pattern = null;
   if (type == "number") {
     newType = "text";
     pattern = "[0-9]*";
@@ -23,7 +23,7 @@ export function TextField({ name, placeholder, type, children, maxLength, onChan
 
 export function TextFieldNonRequired({ name, placeholder, type, children, maxLength, onChange, value }: TextFieldType) {
   let newType = type;
-  let pattern = "";
+  let pattern = null;
   if (type == "number" || type == "tel") {
     pattern = "[0-9]*";
   }

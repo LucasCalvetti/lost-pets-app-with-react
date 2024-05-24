@@ -38,10 +38,8 @@ export function LoginValidationForm() {
         No soy {userData.email}
       </p>
       <ParagraphText>Password:</ParagraphText>
-      <TextField name="password" type="password" placeholder="your_email@example.com" />
+      <TextField name="password" type="password" placeholder="Password1234" />
       <MainButton>Enviar</MainButton>
     </form>
   );
 }
-
-// tenes que resolver la parte estetica de reportPetForm (creo), y hacer el deploy de nuevo en heroku (porque modificaste algo del proyecto modulo 7), cuando termines todo capaz tengas tmb que hacer el nuevo build en github
