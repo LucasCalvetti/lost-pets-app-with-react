@@ -1,53 +1,66 @@
 .container {
-    display: flex;
-    margin-top: 20px;
-    align-items: center;
-    flex-direction: column;
+  display: flex;
+  margin-top: 20px;
+  align-items: center;
+  flex-direction: column;
 }
 
 .map-container {
-    width: 80vw;
-    height: 80vw;
-    position: relative;
+  width: 80vw;
+  height: 80vw;
+  position: relative;
 }
 
 .map {
-    width: 80vw;
-    height: 80vw;
+  width: 80vw;
+  height: 80vw;
 }
 
 .mapboxgl-ctrl .mapboxgl-ctrl-attrib .mapboxgl-compact {
-    display: none;
+  display: none;
 }
 
 .sidebar {
-    z-index: 1;
-    margin: 12px;
-    color: #fff;
-    padding: 6px 12px;
-    border-radius: 4px;
-    position: absolute;
-    font-family: monospace;
-    background-color: rgba(8, 16, 24, 0.9);
+  z-index: 1;
+  margin: 12px;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 4px;
+  position: absolute;
+  font-family: monospace;
+  background-color: rgba(8, 16, 24, 0.9);
 }
 
 .p {
-    max-width: 335px;
-    max-height: 77px;
+  max-width: 335px;
+  max-height: 77px;
 }
 
 .div-button {
-    width: 250px;
-    height: 60px;
-    border: black;
-    display: flex;
-    cursor: pointer;
-    margin-top: 15px;
-    border-radius: 5px;
-    text-align: center;
-    align-self: center;
-    align-items: center;
-    justify-content: center;
-    justify-content: center;
-    background-color: #7b8dd2;
+  width: 250px;
+  height: 60px;
+  border: black;
+  display: flex;
+  cursor: pointer;
+  margin-top: 15px;
+  border-radius: 5px;
+  text-align: center;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  justify-content: center;
+  background-color: #7b8dd2;
+}
+
+.sidebar {
+  background-color: rgb(35 55 75 / 90%);
+  color: #fff;
+  padding: 6px 12px;
+  font-family: monospace;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 12px;
+  border-radius: 4px;
 }

@@ -83,6 +83,7 @@ export function ReportPetForm(props: props) {
         <MainTitleText>{props.formTitle}</MainTitleText>
         <div>
           <ParagraphText>Nombre:</ParagraphText>
+          <br />
           <TextField maxLength={40} name="name" type="text">
             {petToReport.petName ? petToReport.petName : null}
           </TextField>
@@ -106,7 +107,7 @@ export function ReportPetForm(props: props) {
             {petToReport.description ? petToReport.description : ""}
           </TextArea>
         </div>
-        {petToReport.id ? <MainButton>Aplicar cambios</MainButton> : <MainButton>Reportar Mascota</MainButton>}
+        <div className={css.buttonContainer}>{petToReport.id ? <MainButton>Aplicar cambios</MainButton> : <MainButton>Reportar Mascota</MainButton>}</div>
       </form>
       {editFlag ? <MainButton onClick={handleClick}>Reportar como encontrada</MainButton> : null}
     </div>

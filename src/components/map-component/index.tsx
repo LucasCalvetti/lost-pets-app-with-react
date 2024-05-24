@@ -19,9 +19,11 @@ export function Mapping(props?: props) {
   const [loc, setLoc] = useState(props.location ? props.location : "Obelisco");
   const mapContainer = useRef(null);
   const map = useRef(null);
+  const marker = useRef(null);
   const [lngLat, setLngLat] = useState(props.lat && props.lng ? { lng: props.lng, lat: props.lat } : { lng: -58.38169020669707, lat: -34.60378077673 });
   const [zoom, setZoom] = useState(14);
   const setPet = useSetLastPetToCreate();
+
   useEffect(() => {
     if (map.current) return; // initialize map only once
     map.current = new mapboxgl.Map({
@@ -29,6 +31,13 @@ export function Mapping(props?: props) {
       style: "mapbox://styles/mapbox/streets-v11",
       center: lngLat,
       zoom: zoom,
+    });
+    marker.current = new mapboxgl.Marker({ draggable: true }).setLngLat(lngLat).addTo(map.current);
+
+    // Event listener para mover el marcador
+    marker.current.on("drag", function () {
+      const lngLat = marker.current.getLngLat();
+      setLngLat({ lng: lngLat.lng, lat: lngLat.lat });
     });
   }, [mapContainer]);
 
@@ -49,16 +58,23 @@ export function Mapping(props?: props) {
     e.preventDefault();
     const lngLatFromApiMapbox = await searchLocation();
     setLngLat(lngLatFromApiMapbox);
+    marker.current.setLngLat(lngLatFromApiMapbox);
   }
 
   return (
     <div className={css.container}>
-      <link href="https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.css" rel="stylesheet" />
-      <div ref={mapContainer} className={css["map-container"]} />
       <ParagraphText>¿Por qué zona se perdió?</ParagraphText>
+      <br />
       <TextField name="location" onChange={(event) => setLoc(event.target.value)} type="text" placeholder={"Barrio, ciudad, estación..."} children={props.location ? props.location : ""} />
       <div onClick={handleClick} className={css["div-button"]}>
         <ParagraphText>Marcar Ubicación </ParagraphText>
+      </div>
+      <br />
+      <link href="https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.css" rel="stylesheet" />
+      <div ref={mapContainer} className={css["map-container"]}>
+        <div className={css.sidebar}>
+          Longitude: {lngLat.lng} | Latitude: {lngLat.lat} | Zoom: {zoom}
+        </div>
       </div>
     </div>
   );

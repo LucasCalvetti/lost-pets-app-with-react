@@ -45,3 +45,12 @@
     width: 100%;
   }
 }
+
+.buttonContainer {
+  width: 40%;
+}
+@media (max-width: 990px) {
+  .buttonContainer {
+    width: 100%;
+  }
+}
