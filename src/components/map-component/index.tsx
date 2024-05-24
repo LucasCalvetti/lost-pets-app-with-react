@@ -73,7 +73,7 @@ export function Mapping(props?: props) {
       <link href="https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.css" rel="stylesheet" />
       <div ref={mapContainer} className={css["map-container"]}>
         <div className={css.sidebar}>
-          Longitude: {lngLat.lng} | Latitude: {lngLat.lat} | Zoom: {zoom}
+          Longitud: {lngLat.lng} | Latitud: {lngLat.lat} | Zoom: {zoom}
         </div>
       </div>
     </div>

@@ -7,25 +7,25 @@ import { userData } from "hooks";
 import { useNavigate } from "react-router-dom";
 
 export function LoginValidation() {
-    const [showPassWordForm, setshowPassWordForm] = useState(false);
-    const navigate = useNavigate();
-    const { isLogged, email } = userData();
-    //Cuando se monta el componente, checkea si el/la user esta logeado, si lo esta, lx envia a la home. Previene que usuarixs vayan manualmente o con la flecha "atras" del navegador a /email estando logueados
+  const [showPassWordForm, setshowPassWordForm] = useState(false);
+  const navigate = useNavigate();
+  const { isLogged, email } = userData();
+  //Cuando se monta el componente, checkea si el/la user esta logeado, si lo esta, lo envia a la home. Previene que usuarios vayan manualmente o con la flecha "atras" del navegador a /email estando logueados
 
-    useEffect(() => {
-        if (isLogged) {
-            navigate("/");
-        }
-        if (email != null) {
-            setshowPassWordForm(true);
-        }
-    }, [email]);
+  useEffect(() => {
+    if (isLogged) {
+      navigate("/");
+    }
+    if (email != null) {
+      setshowPassWordForm(true);
+    }
+  }, [email]);
 
-    return (
-        <div className={css.container}>
-            <MainTitleText>Ingresar</MainTitleText>
-            <ParagraphText>Para ingresar una mascota, o consultar datos de usuario necesitamos que previamente ingreses a tu cuenta. Si no tienes cuenta, al ingresar tu mail te pedirá datos para crearla.</ParagraphText>
-            {showPassWordForm ? <LoginValidationForm /> : <EmailValidationForm />}
-        </div>
-    );
+  return (
+    <div className={css.container}>
+      <MainTitleText>Iniciar Sesión</MainTitleText>
+      <ParagraphText>Para ingresar una mascota, o consultar datos de usuario necesitamos que previamente ingreses a tu cuenta. Si no tienes cuenta, al ingresar tu mail te pedirá datos para crearla.</ParagraphText>
+      {showPassWordForm ? <LoginValidationForm /> : <EmailValidationForm />}
+    </div>
+  );
 }
