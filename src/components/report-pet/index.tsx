@@ -33,8 +33,9 @@ export function ReportPet({ petName, petId, setPopUpReport }: props) {
   function handleSubmit(e) {
     e.preventDefault();
     const nombre = e.target.name.value;
-    const phone = e.target.phone.value;
+    var phone = e.target.phone.value;
     const description = e.target.description.value;
+    Number(phone);
     const newReport = {
       fullName: nombre,
       phoneNumber: phone,
